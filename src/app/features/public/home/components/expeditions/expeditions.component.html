@@ -1,0 +1,38 @@
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="flex justify-between items-center mb-16">
+<h2 class="text-4xl font-black font-headline text-primary tracking-tight">Expedições em Destaque</h2>
+<a class="text-secondary font-bold flex items-center gap-2 hover:underline" href="#">Ver todas <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div *ngFor="let expedition of expeditions" class="bg-surface-container-lowest rounded-lg overflow-hidden editorial-shadow group">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" [src]="expedition.imageUrl" [alt]="expedition.imageAlt">
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{{expedition.badge}}</div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="text-2xl font-bold font-headline text-on-surface">{{expedition.title}}</h3>
+<div class="flex items-center text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 font-bold">{{expedition.rating}}</span>
+</div>
+</div>
+<div class="flex gap-4 text-sm text-outline font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> {{expedition.durationDays}} Dias</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">group</span> Máx {{expedition.maxPax}} pax</span>
+</div>
+<div class="pt-4 flex justify-between items-center border-t border-outline-variant/10">
+<div>
+<span class="text-xs text-outline font-bold uppercase block tracking-widest">A partir de</span>
+<span class="text-2xl font-black text-primary">R$ {{expedition.price}}</span>
+</div>
+<button class="bg-surface-container-high hover:bg-primary-container hover:text-white p-3 rounded-xl transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

@@ -1,0 +1,70 @@
+<app-header></app-header>
+<main *ngIf="homeData$ | async as homeData">
+  <app-hero></app-hero>
+  <app-categories [categories]="homeData.categories"></app-categories>
+  <app-expeditions [expeditions]="homeData.expeditions"></app-expeditions>
+  <!-- Cultura e Comunidade Section (Asymmetric Bento) -->
+  <section class="py-32 px-8 max-w-screen-2xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+    <div class="lg:col-span-5 flex flex-col justify-center space-y-8">
+    <h2 class="text-5xl font-black font-headline text-primary tracking-tighter leading-tight">
+                            Cultura & <br><span class="text-secondary">Comunidade</span>
+    </h2>
+    <p class="text-lg text-on-surface-variant leading-relaxed">
+                            Nossas expedições são construídas em parceria direta com comunidades locais, garantindo que o prestígio da sua viagem se traduza em desenvolvimento sustentável e preservação cultural.
+                        </p>
+    <div class="flex gap-4">
+    <button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold">Nossa História</button>
+    <button class="bg-transparent border border-primary text-primary px-8 py-4 rounded-xl font-bold">Projetos Sociais</button>
+    </div>
+    </div>
+    <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+    <div class="space-y-4">
+    <div class="h-80 rounded-xl overflow-hidden shadow-2xl">
+    <img class="w-full h-full object-cover" data-alt="Indigenous person wearing traditional feathered headdress in a profile shot with natural soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3GkPDFQwKFA-k1IXER93UmDsRFRbiauRCEPjKiKglQjS9-QhEyo9ox6FBabok0PeRuIuV-Bx0uKCkZdyrejyATEN989Gq8FTiK8dqvhuaHSGlevwzPqpydc85NIQj1t8B_yoeVMmnU6Q5zyrCun64xzFZBZteHOThcm_Vps3qsgBRJ5JleUE_WXa1_flrmySmtHq8jHfKSFMrTXZU8zBOU_C92Ad-F1izgh2C_mTTf-bL-X8qprxzUU66--xgPWTJruOWqTn-Z0I">
+    </div>
+    <div class="h-48 bg-primary-fixed rounded-xl p-8 flex flex-col justify-end">
+    <span class="text-3xl font-black font-headline text-on-primary-fixed tracking-tighter">+15</span>
+    <p class="text-on-primary-fixed-variant font-bold">Etnias parceiras</p>
+    </div>
+    </div>
+    <div class="pt-12 space-y-4">
+    <div class="h-48 bg-secondary-fixed rounded-xl p-8 flex flex-col justify-end">
+    <span class="text-3xl font-black font-headline text-on-secondary-fixed tracking-tighter">100%</span>
+    <p class="text-on-secondary-fixed-variant font-bold">Guias Locais</p>
+    </div>
+    <div class="h-80 rounded-xl overflow-hidden shadow-2xl">
+    <img class="w-full h-full object-cover" data-alt="Traditional Amazonian longboat or 'peco-peco' floating on a misty river surrounded by tall jungle trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP-UxNQG6rR15dYuWTNMXE7720P9Jo_Dg8d5idEo9ekuluq-7H8jC8u_Gz7vLiujjWdMUAVA_mEbRvXu71B-liDQzxJ8d5wlVFQUZ02mnRP34s7MWh9Y5qFmz8qJQHEqY_tU2LvpdU7Mh5XZ3IQ5Xdo7w3YC_dIJPdwr2idX3NaXpbOhFCRrTetTonLF2c8nxZ1tDvX3mGtnBHWWtjfJ6xHURoAFB7zYYoD_eeKmeo1r0lSbFtWBnemJPF70V3v6UdDycSaaTszU0">
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    <!-- Bloco de Confiança -->
+    <section class="py-20 bg-emerald-900 text-on-primary-container">
+    <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div class="flex flex-col items-center text-center space-y-4">
+    <div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-fixed">
+    <span class="material-symbols-outlined text-4xl" data-icon="verified_user">verified_user</span>
+    </div>
+    <h4 class="text-xl font-bold font-headline">Guias Verificados</h4>
+    <p class="text-sm opacity-80">Especialistas certificados com conhecimento ancestral e técnico da região.</p>
+    </div>
+    <div class="flex flex-col items-center text-center space-y-4">
+    <div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-fixed">
+    <span class="material-symbols-outlined text-4xl" data-icon="lock">lock</span>
+    </div>
+    <h4 class="text-xl font-bold font-headline">Pagamento Seguro</h4>
+    <p class="text-sm opacity-80">Transações criptografadas e flexibilidade de parcelamento sem juros.</p>
+    </div>
+    <div class="flex flex-col items-center text-center space-y-4">
+    <div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-fixed">
+    <span class="material-symbols-outlined text-4xl" data-icon="eco">eco</span>
+    </div>
+    <h4 class="text-xl font-bold font-headline">Sustentabilidade Garantida</h4>
+    <p class="text-sm opacity-80">Parte do valor da sua reserva é revertido para a conservação da fauna local.</p>
+    </div>
+    </div>
+    </section>
+</main>
+<app-footer></app-footer>
