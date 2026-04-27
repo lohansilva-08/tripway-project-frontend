@@ -6,6 +6,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { ExpeditionsComponent } from './components/expeditions/expeditions.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ]
 })
 export class HomeModule { }

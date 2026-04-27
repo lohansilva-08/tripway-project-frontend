@@ -2,7 +2,7 @@
 <div class="max-w-screen-2xl mx-auto px-8">
 <div class="flex justify-between items-center mb-16">
 <h2 class="text-4xl font-black font-headline text-primary tracking-tight">Expedições em Destaque</h2>
-<a class="text-secondary font-bold flex items-center gap-2 hover:underline" href="#">Ver todas <span class="material-symbols-outlined">arrow_forward</span></a>
+<a class="text-secondary font-bold flex items-center gap-2 hover:underline cursor-pointer" routerLink="/experiences">Ver todas <span class="material-symbols-outlined">arrow_forward</span></a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 <div *ngFor="let expedition of expeditions" class="bg-surface-container-lowest rounded-lg overflow-hidden editorial-shadow group">
@@ -27,9 +27,9 @@
 <span class="text-xs text-outline font-bold uppercase block tracking-widest">A partir de</span>
 <span class="text-2xl font-black text-primary">R$ {{expedition.price}}</span>
 </div>
-<button class="bg-surface-container-high hover:bg-primary-container hover:text-white p-3 rounded-xl transition-all">
+<a routerLink="/experiences" class="bg-surface-container-high hover:bg-primary-container hover:text-white p-3 rounded-xl transition-all flex items-center justify-center cursor-pointer">
 <span class="material-symbols-outlined">arrow_forward</span>
-</button>
+</a>
 </div>
 </div>
 </div>

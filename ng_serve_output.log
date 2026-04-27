@@ -1,3 +1,7 @@
+
+> tripway-project-frontend@0.0.0 start
+> ng serve
+
 - Generating browser application bundles (phase: setup)...
 ✔ Browser application bundle generation complete.
 
@@ -11,13 +15,14 @@ main.js                                        | main                          |
 | Initial Total                 |   2.46 MB
 
 Lazy Chunk Files                               | Names                         |  Raw Size
-src_app_features_public_home_home_module_ts.js | home-home-module              |  57.65 kB |
+src_app_features_public_home_home_module_ts.js | home-home-module              |  58.41 kB |
 src_app_features_public_public_module_ts.js    | features-public-public-module |   3.78 kB |
 src_app_features_admin_admin_module_ts.js      | features-admin-admin-module   |   3.52 kB |
 
-Build at: 2026-04-07T02:42:09.247Z - Hash: 2528f5d804b56d3c - Time: 7087ms
+Build at: 2026-04-27T01:52:56.921Z - Hash: fefaf4ca63cb0128 - Time: 8917ms
 
 ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
 
 
 ✔ Compiled successfully.
+Terminated
