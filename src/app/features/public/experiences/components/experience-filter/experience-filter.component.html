@@ -1,0 +1,57 @@
+<div class="sticky top-28">
+  <h2 class="text-xl font-bold mb-6 text-primary flex items-center gap-2">
+    <span class="material-symbols-outlined">tune</span> Filtros
+  </h2>
+
+  <!-- Location -->
+  <div class="mb-8">
+    <label class="block text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Localização</label>
+    <div class="relative">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">location_on</span>
+      <input type="text" placeholder="Para onde vamos?"
+             (input)="onLocationChange($event)"
+             class="w-full pl-10 pr-4 py-3 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-secondary-container/40"/>
+    </div>
+  </div>
+
+  <!-- Price Range -->
+  <div class="mb-8">
+    <label class="block text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Faixa de Preço (Máx)</label>
+    <input type="range" min="200" max="5000" step="100" [value]="currentFilter.priceMax || 5000"
+           (input)="onPriceChange($event)"
+           class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary"/>
+    <div class="flex justify-between mt-2 text-sm text-on-surface-variant">
+      <span>R$ 200</span>
+      <span>R$ {{currentFilter.priceMax || '5.000+'}}</span>
+    </div>
+  </div>
+
+  <!-- Duration -->
+  <div class="mb-8">
+    <label class="block text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Duração</label>
+    <div class="space-y-3">
+      <label class="flex items-center gap-3 cursor-pointer group">
+        <input type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary"/>
+        <span class="group-hover:text-primary transition-colors">Meio Período</span>
+      </label>
+      <label class="flex items-center gap-3 cursor-pointer group">
+        <input type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary"/>
+        <span class="group-hover:text-primary transition-colors">Dia Inteiro</span>
+      </label>
+      <label class="flex items-center gap-3 cursor-pointer group">
+        <input type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary"/>
+        <span class="group-hover:text-primary transition-colors">Multi-dias</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Activity Level -->
+  <div class="mb-8">
+    <label class="block text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-4">Nível de Atividade</label>
+    <div class="flex flex-wrap gap-2">
+      <button class="px-4 py-1.5 rounded-full bg-surface-container text-sm hover:bg-primary hover:text-on-primary transition-all">Leve</button>
+      <button class="px-4 py-1.5 rounded-full bg-surface-container text-sm hover:bg-primary hover:text-on-primary transition-all">Moderado</button>
+      <button class="px-4 py-1.5 rounded-full bg-surface-container text-sm hover:bg-primary hover:text-on-primary transition-all">Intenso</button>
+    </div>
+  </div>
+</div>

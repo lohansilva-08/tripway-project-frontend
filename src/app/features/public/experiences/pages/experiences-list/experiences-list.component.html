@@ -1,0 +1,63 @@
+<app-header></app-header>
+<main class="pt-24 pb-20 max-w-screen-2xl mx-auto px-8 min-h-screen">
+  <div class="flex flex-col md:flex-row gap-12">
+    <!-- Sidebar Filters -->
+    <aside class="w-full md:w-72 space-y-10 shrink-0">
+      <app-experience-filter (filterChange)="onFilterChange($event)"></app-experience-filter>
+    </aside>
+
+    <!-- Content Area -->
+    <div class="flex-1 space-y-12">
+      <!-- Search Header & Sorting -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <h1 class="text-4xl font-black tracking-tight text-emerald-900 leading-tight">Explorar Experiências</h1>
+          <p class="text-on-surface-variant mt-2 text-lg">Descubra o coração pulsante da maior floresta tropical do mundo.</p>
+        </div>
+        <div class="flex items-center gap-4 shrink-0">
+          <span class="text-sm font-medium text-on-surface-variant">Ordenar por:</span>
+          <select class="bg-surface-container-lowest border-none rounded-xl py-2 px-4 shadow-sm focus:ring-2 focus:ring-secondary-container/40 font-medium">
+            <option>Mais Relevantes</option>
+            <option>Menor Preço</option>
+            <option>Melhor Avaliados</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div *ngIf="isLoading" class="flex justify-center items-center py-20">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+
+      <!-- Loaded State -->
+      <ng-container *ngIf="!isLoading">
+        <!-- Empty State -->
+        <div *ngIf="experiences.length === 0" class="py-20 text-center bg-surface-container-low rounded-xl">
+          <span class="material-symbols-outlined text-6xl text-outline-variant mb-4">search_off</span>
+          <h3 class="text-2xl font-bold text-emerald-900 mb-2">Nenhuma experiência encontrada</h3>
+          <p class="text-on-surface-variant">Tente ajustar seus filtros para encontrar mais resultados.</p>
+        </div>
+
+        <!-- Experience Grid -->
+        <div *ngIf="experiences.length > 0" class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <app-experience-card *ngFor="let exp of experiences" [experience]="exp"></app-experience-card>
+        </div>
+
+        <!-- Pagination -->
+        <nav *ngIf="experiences.length > 0" class="flex justify-center items-center gap-2 pt-10 border-t border-outline-variant/20">
+          <button class="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container hover:bg-primary-container hover:text-on-primary-container transition-all">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary text-on-primary font-bold">1</button>
+          <button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container-high transition-all">2</button>
+          <button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container-high transition-all">3</button>
+          <span class="px-2">...</span>
+          <button class="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container hover:bg-primary-container hover:text-on-primary-container transition-all">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </nav>
+      </ng-container>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>
